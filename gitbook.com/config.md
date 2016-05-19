@@ -18,6 +18,32 @@
 * 如果出现上述提示，在 `gitbook` 中设置 `/settings/GitHub/GitHub Repository/Manage permission` ，修改为 `With access to public repository`
 * 重现设置 `add webhook`
 
+## GitHub 测试
+
+`GitBook` 与 `GitHub` 绑定之后，访问书籍出现如下错误：
+
+>Bad Gateway
+
+表示 `webhook` 设置出错，**仔细检查设置过程中出现的提示信息！！**
+
+本地测试：
+
+$ > gitbook build
+info: loading book configuration....OK 
+info: load plugin gitbook-plugin-highlight ....OK 
+info: load plugin gitbook-plugin-search ....OK 
+info: load plugin gitbook-plugin-sharing ....OK 
+info: load plugin gitbook-plugin-fontsettings ....OK 
+info: >> 4 plugins loaded 
+info: start generation with website generator 
+info: clean website generator
+info: OK 
+info: generation is finished 
+
+Done, without error
+
+说明你的书籍吻合 `gitbook` 规约,可以从本地编译成功，可以推送到 `GitHub`
+
 
 ## 绑定域名
 
