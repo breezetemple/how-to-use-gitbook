@@ -30,8 +30,13 @@
     "plugins": [
         "js-sequence-diagram",
         "mermaid",
-        "mathjax",
-        "puml"
+        "-mathjax",
+        "puml",
+        "katex",
+        "emphasize",
+        "include-codeblock",
+        "splitter",
+        "codeblock-filename"
     ],
     "title": "GitBook 简明教程",
     "variables": {}
