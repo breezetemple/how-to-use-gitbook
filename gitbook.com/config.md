@@ -18,6 +18,12 @@
 * 如果出现上述提示，在 `gitbook` 中设置 `/settings/GitHub/GitHub Repository/Manage permission` ，修改为 `With access to public repository`
 * 重现设置 `add webhook`
 
+### 常见的错误
+
+书本没有被更新/没有任何的构建
+
+如果你连接了你的GitHub仓库至一个GitBook项目，但是编辑它的内容却没有触发GitBook任何的构建操作。验证webhook被正确的添加到了你的GitHub仓库中（GitHub仓库设置->Webhook），如果webhook不存在或无效，之后添加它到你书本的设置中。
+
 ## GitHub 测试
 
 `GitBook` 与 `GitHub` 绑定之后，访问书籍出现如下错误：
