@@ -1,8 +1,10 @@
 {
+    "title": "GitBook 简明教程",
     "author": "Breeze",
     "description": "A GitBook about learning GitBook",
-    "extension": null,
-    "generator": "site",
+    "language": "zh-hans",
+    "gitbook": "3.2.3",
+    "output.name": "site",
     "links": {
         "sharing": {
             "all": null,
@@ -12,32 +14,37 @@
             "weibo": null
         }
     },
-    "output": null,
-    "pdf": {
-        "fontSize": 12,
-        "footerTemplate": null,
-        "headerTemplate": null,
-        "margin": {
-            "bottom": 36,
-            "left": 62,
-            "right": 62,
-            "top": 36
-        },
-        "pageNumbers": false,
-        "paperSize": "a4"
-    },
     "plugins": [
-        "js-sequence-diagram",
+        "anchor-navigation-ex",
         "mermaid-gb3",
         "-mathjax",
         "puml",
         "katex",
         "emphasize",
         "include-codeblock",
+        "ace",
         "splitter",
         "codeblock-filename",
         "multipart"
     ],
-    "title": "GitBook 简明教程",
-    "variables": {}
+
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": true
+        },
+        "include-codeblock": {
+            "template": "ace",
+            "unindent": true,
+            "edit": true,
+            "theme": "monokai"
+        },
+        "anchor-navigation-ex": {
+            "showLevel": true,
+            "isRewritePageTitle": false,
+            "associatedWithSummary": true,
+            "tocLevel1Icon": "fa fa-hand-o-right",
+            "tocLevel2Icon": "fa fa-hand-o-right",
+            "tocLevel3Icon": "fa fa-hand-o-right"
+        }
+    }
 }
