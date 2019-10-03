@@ -1,0 +1,27 @@
+language: node_js
+before_install:
+    - npm install gitbook-cli -g
+install:
+    - gitbook build
+test: true
+script:
+    - git checkout --orphan gh-pages
+    - git rm --cached -r .
+    - git clean -df
+    - rm -rf *~
+    - cp -r _book/* .
+    - git add .
+    - git commit -m "Publish book"
+    - git push "https://${GH_TOKEN}@${GH_REF}" gh-pages:gh-pages
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: "$GITHUB_TOKEN"
+  keep_history: true
+  on:
+    branch: master
+env:
+  global:
+    - secure: yIAqvAo61HTg5Yfp+DCnw5vIv4nvkTwcjNSFLuDeGZ2vICo31Q2yidQn3H/+nIbELB7ZBuO8fPOAY6dtx8q2UfH/dMw1w4r3kw8effuxu96jnZni1ZHWc39QuUaWhB9HkQeVa+chq2X91jT0V9X+PK2UD5nol8M5QUFhUDmS5MjWlIKPD/UcD7p0Rkxbg4iQl6vEH88uA9bj1kjKpqoyEt5VeqzsnhYE8NCodCn/GyQzsvtfp3i41TEvssHEkcsyIXC1AWLCkdchFkz9gU6A9c6glajN+lYWq3G2Nbs+Zia0W1/PjX6NEsCPDHdBMyBoIBYVV/IEXFw0ehMvoU/4mREZNqBz2LxluT/ykik8HH7foHZa1BQX9qUWLf4gcHyCMY1ejjlSXi5nwk+9k6djxP9TzA6fj4h48SCiqt3bFburLI+/dkSz7FATSgWY5ZJSbQxOrRGi0FMEYavSIK5kb+N82hmRguZDb7BhWRMgSSfhLyRCn0DYyDvaX5VXNW2ZKVlbqscUueYAjiJkFyxQcukVg67hQ8sGtZGanoaBLBPKZ+L1A5tiBT+3cJhOm/q6vGlwMRmsUYYOWOC1v6ToxVYPEWlpEMe/rIByzr1xu6lNT3fbu9hZE/Ed5p/DElt6Lu6FMoqIl1fLO/il3maTcPNOiFeftFWFFX2sjEyMEa0=
+    - GH_REF: github.com/breezetemple/how-to-use-gitbook
