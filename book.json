@@ -1,9 +1,8 @@
 {
-    "author": "Breeze.Temple",
+    "author": "Breeze",
     "description": "A GitBook about learning GitBook",
     "extension": null,
     "generator": "site",
-    "isbn": null,
     "links": {
         "sharing": {
             "all": null,
@@ -29,14 +28,15 @@
     },
     "plugins": [
         "js-sequence-diagram",
-        "mermaid",
+        "mermaid-gb3",
         "-mathjax",
         "puml",
         "katex",
         "emphasize",
         "include-codeblock",
         "splitter",
-        "codeblock-filename"
+        "codeblock-filename",
+        "multipart"
     ],
     "title": "GitBook 简明教程",
     "variables": {}
