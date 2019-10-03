@@ -34,6 +34,7 @@
 
 本地测试：
 
+```
 $ > gitbook build
 info: loading book configuration....OK 
 info: load plugin gitbook-plugin-highlight ....OK 
@@ -47,6 +48,7 @@ info: OK
 info: generation is finished 
 
 Done, without error
+```
 
 说明你的书籍吻合 `gitbook` 规约,可以从本地编译成功，可以推送到 `GitHub`
 
