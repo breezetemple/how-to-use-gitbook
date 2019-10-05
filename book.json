@@ -30,7 +30,7 @@
 
     "pluginsConfig": {
         "theme-default": {
-            "showLevel": true
+            "showLevel": false
         },
         "include-codeblock": {
             "template": "ace",
