@@ -347,7 +347,9 @@ gitbook install
 }
 ```
 
-`<extoc></extoc>` 会在此处生成`TOC`目录
+`<extoc></extoc>` 会在此处生成`TOC`目录，效果如下
+
+<extoc></extoc>
 
 
 ## Ace Plugin
