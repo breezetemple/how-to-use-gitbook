@@ -1,5 +1,8 @@
 language: node_js
 node_js: stable
+cache:
+  directories:
+  - node_modules
 before_install:
 - npm install -g gitbook-cli
 install:
@@ -14,14 +17,11 @@ script:
 - cp -r _book/* .
 - git add .
 - git commit -m "Publish book"
-- git push -f "https://${GITHUB_TOKEN}@${GH_REF}" master:gh-pages
-deploy:
-  provider: pages
-  skip_cleanup: true
-  keep_history: true
-  on:
-    branch: master
+- git push -f "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+branches:
+  only:
+  - master
 env:
   global:
   - GH_REF: github.com/breezetemple/how-to-use-gitbook.git
-  - secure: lqt6evRBA+4MXRyRnd+ygqrgVXiB8adZXYTrfUKTRS224zq0LojruPIPzGJH07QMieiY1+1I1aoignZTEqYq7QEqaTwHVq2b7qCI7eUMwx82CN/69hj7Rp3Dt9/yzVxzhFwoaOSOjzxRCWPe17iua66eunr79JpeB5jL3xTIm36sB6jl0tTtGAe3w20Uh0CH5RqHBBw9rgyuoS705lh1VeMwYwGmLeaATPUbh5U5bUO2QhkWTM8QwaCzgH4mXAZ/dRjpzojCuITKw6ojG5CwVF5UQ/Wxk4MV+f84qSGWv+PxNfCjIrPXuEwmSO9DdHmHJ/8/tPQCvui1QRG4jvY4mTGc7rEIHOxj1Dn0MUwBDCD5fJbKYX+r0D5+9QqPTTyQhHcWAYMoKru0nGojyWi2mhh0x0nYCM00wTcCfJAsB94q5PP+jzvKFO3ZdcnTIJQAyrVU9TUfGUF/n84DowijTciTDR7qIY4DJJjrc8YGCc00xFvln/lmhji29itLi8mkM9ghTe8Qng/9KupBUbUmmOhXsir1/xYaixCmysMIi36wC4Tw6lXM/WMhS69qJbKzadglKthILtgwKBXhTAgoM2PnsazYL5JCdFLu7VDLzgyJegK3Rt0ddZOcXrW3Q1UjVDFIVNfyDgpm6WoVotHwRLDNIz0XUaiTVZCPInbpheI=
+  - secure: apj6ss0gNwJ+hP7dAu7f0orWx7SLvKgS1JjzyzsaRbDk/MepiVIpy8NagIrsAS1WXr0ltVHOiEmxumqvTrh1D+D/94Z0QI/KsGzBTH4L4XERG45ZLHfzXZxRMKmblMeTVVi18L68nDu4pONNZ0wjsQ06vWY6NuBfbnoUiyOOSkzw9bio8HAPh5HJMtfYyo3iwNeRPnMhUCa+Rwo5+EykIBMo6Vy50aA0ZBy0mPW8tHSUn+7RPmJJ++B2rIJzJGo9nZwZKDlc49kF10689306y5bfws/rdjMkeq335J5Hchv1HmBl/w3P8G7Lyul/7dZm6ikZ5St/W+HtgSajxuk0rs74svXUoBzkzKfxrT4FIDe5pIZr5ROAGMVS/cdKsSUOM7bwOuT8NTweYPNMuPRph/uw8Bl7xVgDPEAA261OTcQZjvc/Hqgmqu/Vo0B3oSfencFw/jvMlnGPoJZmlHktIoKZVEulCY9SvN9NScvhnT5y0yceqv/iXWcIAzn51I6CuL+EWyJVBkr/mjBwTDMSzQ71Sbw/8nM7lSuV39FaSycjNVkAI9pWsFXX9jgufUBgweUY4W5N707xURdwAZlVnMMYnU0EAvZMbjXQ9PKVWAY+DXsGL1KJS6oveLIQS+pWfjt1HYNUp0uijPgMre3BoVz74ziNoLD8JO8SKOp3M7A=
