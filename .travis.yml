@@ -1,11 +1,11 @@
 language: generic
 before_install:
 - npm install -g gitbook-cli
-- rm -rf _build
 install:
 - gitbook install
-- gitbook build
 script:
+- rm -rf _build
+- gitbook build
 - git checkout --orphan gh-pages
 - git rm --cached -r .
 - git clean -df
