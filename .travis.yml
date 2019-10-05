@@ -15,13 +15,15 @@ script:
 - git clean -df
 - rm -rf *~
 - cp -r _book/* .
+- git config user.name "breezetemple"
+- git config user.email "breeze.temple@gmail.com"
 - git add .
 - git commit -m "Publish book"
-- git push -f "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+- git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
 branches:
   only:
   - master
 env:
   global:
   - GH_REF: github.com/breezetemple/how-to-use-gitbook.git
-  - secure: apj6ss0gNwJ+hP7dAu7f0orWx7SLvKgS1JjzyzsaRbDk/MepiVIpy8NagIrsAS1WXr0ltVHOiEmxumqvTrh1D+D/94Z0QI/KsGzBTH4L4XERG45ZLHfzXZxRMKmblMeTVVi18L68nDu4pONNZ0wjsQ06vWY6NuBfbnoUiyOOSkzw9bio8HAPh5HJMtfYyo3iwNeRPnMhUCa+Rwo5+EykIBMo6Vy50aA0ZBy0mPW8tHSUn+7RPmJJ++B2rIJzJGo9nZwZKDlc49kF10689306y5bfws/rdjMkeq335J5Hchv1HmBl/w3P8G7Lyul/7dZm6ikZ5St/W+HtgSajxuk0rs74svXUoBzkzKfxrT4FIDe5pIZr5ROAGMVS/cdKsSUOM7bwOuT8NTweYPNMuPRph/uw8Bl7xVgDPEAA261OTcQZjvc/Hqgmqu/Vo0B3oSfencFw/jvMlnGPoJZmlHktIoKZVEulCY9SvN9NScvhnT5y0yceqv/iXWcIAzn51I6CuL+EWyJVBkr/mjBwTDMSzQ71Sbw/8nM7lSuV39FaSycjNVkAI9pWsFXX9jgufUBgweUY4W5N707xURdwAZlVnMMYnU0EAvZMbjXQ9PKVWAY+DXsGL1KJS6oveLIQS+pWfjt1HYNUp0uijPgMre3BoVz74ziNoLD8JO8SKOp3M7A=
+  - secure: zDjitxdArbEchCBi/OfWzaWguCgjstZ35S0iGLy8DtHza9uoR9iyIhC3zI2L4RtBwg5L0DyF3ejqJczjbC+0kVSS9CtCqLDILLZAuGrIG2wuDzEYXNP09fZ31cH7dn2RLdoD0RMp8yRIrwfSuOmcghiaP/++u5CUgQNXAMPOqa77TxlKc/RFBIVGEKyg3irm2IdK/dS7FUBSS65j69YFNN4kbknj73tD76n/XXSakg6Ya/6fQWZ99NCJI30OzPCxrQWZyOwi56zDJ9EBEH+/N+6sa/XQc5rl/7niu5N7n9eHVg8legyZn5c+QNXrwQjqZzvupftT9MgYZu8515/39mk5mqu3DcIbDoTErpUuS0kgOqO/DCNutmAZlyhfpHpf1uuHqPhFz2RbGa1zuJr8EM0Cka+wezloG+uEFZD+/klgBC/BRKJvmXdtjHhBKCFAl1cjhfVFtFl6trpMLb7UznC2BvfTi3ouaNWPWqJznnOBZ3SuK+nY+CaO4doqt9EE1EqlHyAJlguKCblxlEb2naUnikU8uOmkFEUL13NzUGzJ7uMkRNAOxQAGLWUaTCWpybqDuBAaT4dSBzGdQFsOVp4bOsZSHvbUCsZQTMljrX4ve94HUlFuvWGoKxyGgZHG9olaXx83L/2s1MPXeH/1kfNM7eGLUfcmVob46mHVJVI=
