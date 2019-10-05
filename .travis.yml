@@ -8,17 +8,6 @@ before_install:
 install:
 - gitbook install
 - gitbook build
-script:
-- git checkout --orphan gh-pages
-- git rm --cached -r .
-- git clean -df
-- rm -rf *~
-- cp -r _book/* .
-- git config user.name "breezetemple"
-- git config user.email "breeze.temple@gmail.com"
-- git add .
-- git commit -m "Publish book"
-- git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:gh-pages
 deploy:
   provider: pages
   skip_cleanup: true
