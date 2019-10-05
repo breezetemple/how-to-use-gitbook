@@ -8,7 +8,6 @@ before_install:
 install:
 - gitbook install
 - gitbook build
-test: true
 script:
 - git checkout --orphan gh-pages
 - git rm --cached -r .
