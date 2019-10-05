@@ -1,7 +1,7 @@
 language: generic
 before_install:
 - npm install -g gitbook-cli
-- rm -rg _build
+- rm -rf _build
 install:
 - gitbook install
 - gitbook build
