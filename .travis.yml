@@ -2,6 +2,7 @@ language: generic
 before_install:
 - npm install -g gitbook-cli
 - rm -rf _build
+- echo TRAVIS_SECURE_ENV_VARS = ${TRAVIS_SECURE_ENV_VARS}
 install:
 - gitbook install
 - gitbook build
