@@ -1,8 +1,4 @@
 language: generic
-node_js: stable
-cache:
-  directories:
-  - node_modules
 before_install:
 - npm install -g gitbook-cli
 install:
