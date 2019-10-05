@@ -19,11 +19,14 @@ script:
 - git config user.email "breeze.temple@gmail.com"
 - git add .
 - git commit -m "Publish book"
-- git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
-branches:
-  only:
-  - master
+- git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:gh-pages
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master
 env:
   global:
   - GH_REF: github.com/breezetemple/how-to-use-gitbook.git
-  - secure: jd18F80zsGapPTlxApMFGBQQTa2bKJ+iCZgQF5LH717RjzgxM7Fm3fA+1sjJMUGMsG41iqAghdFrAdII+VhBLWHTqKASL8iEN+MLWVNGjS5G/qgVdHRBfZyYn+hN5bcVoNpRttBqeqxvTZgr1KjvaRbnJKXIiPz+AzT3mZtHXKEeBC9zhByN36XjvzAbdnuKozD/TA4vsLEjeWxWragvMAZ0y3j+wg5706RQW+RASuqKrEGUvg/HZfaVkBMHNl+MdHtDu8agsTyfhGXASDwakjYxeyN0wxwLX/PQH/OnMUD3GSA5/fzZVnHJVAbBWmU8SxcTXxZ5kbPddCfc0vCqR4TiNCRx7vnVRQadBhQicWH1eX52tWNmG2NIiPc6ip4ER+Y3OYnWQ3r4zJZa/W82mvGELi/YV8xHfWh7M4EK6QmXsV1OL0wV656PKfNFyFiwYYIZKOpq41vJh6e2VsMNLk+rXyqsJladRqmj4SBGo6hmrDQMEXv6e09+UZuk7EZm8S25+slzdfCm+Uxv9kelUwLdWowesxgFUgbVmcBnzdJntZW/soCAaVvWKQEONeyIw1JrhE+BTidSLwrnhFBIxpGpFXyvwNuviHEwvz2BoOMakvF+yZ/cTtZaRK0+Ez0/fhSJ5HDwBNrE6RogU0T5Qys/bpWy1mjLofof0LzjZP4=
